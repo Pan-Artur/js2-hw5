@@ -74,16 +74,16 @@ chooseCurrentKeyIndex();
 const playGame = () => {
   document.addEventListener("keydown", (e) => {
     if (Number(e.key) === keys[currentKeyIndex].id) {
-      currentKeyIndex = currentKeyIndex + 1;
-      PNotify.success({
-        text: "Це правильна клавіша!",
-      });
-      currentKeyIndex = Math.floor(Math.random() * keys.length);
-    } else {
-      PNotify.error({
-        text: `Це не правильна клавіша!`,
-      });
-    }
+        currentKeyIndex = currentKeyIndex + 1;
+        PNotify.success({
+            text: 'Це правильна клавіша!',
+          });
+        currentKeyIndex = Math.floor(Math.random() * keys.length);
+      } else {
+        PNotify.error({
+            text: 'Це не правильна клавіша!',
+          });
+      }
   });
 
   buttonsArr.forEach((buttonEl) => {
@@ -91,13 +91,13 @@ const playGame = () => {
       if (Number(buttonEl.textContent) === keys[currentKeyIndex].id) {
         currentKeyIndex = currentKeyIndex + 1;
         PNotify.success({
-          text: "Це правильна клавіша!",
-        });
+            text: 'Це правильна клавіша!',
+          });
         currentKeyIndex = Math.floor(Math.random() * keys.length);
       } else {
         PNotify.error({
-          text: `Це не правильна клавіша!`,
-        });
+            text: 'Це не правильна клавіша!',
+          });
       }
     });
   });
@@ -108,7 +108,7 @@ playGame();
 const updateGame = () => {
   chooseCurrentKeyIndex();
   PNotify.success({
-    text: "Гру оновлено!",
+    text: 'Гру оновлено!',
   });
 };
 
